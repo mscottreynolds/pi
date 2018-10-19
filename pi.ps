@@ -45,12 +45,12 @@ begin
     var b, n, n2, carry: Number
     var i, l: Number
     var isZero: Boolean
-    var p, t: Array of Number
+    var p, t: Number[]
     var text: String
 
-    precision := (maxDigits) div 3 + 2
-    p := new Array[precision+1]
-    t := new Array[precision+1]
+    precision := maxDigits div 3 + 2
+    p := new Number[precision+1]
+    t := new Number[precision+1]
 
     // Initialize t.
     for i := 0 to precision do
@@ -109,7 +109,7 @@ begin
 
     // p = p * 4
     carry := 0
-    for i := precision downto 0 do
+    for i := precision to 0 by -1 do
         b := p[i] * 4 + carry
         p[i] := b mod SIZE
         carry := b div SIZE
@@ -164,14 +164,14 @@ begin
 
     // p = p * 4
     carry := 0
-    for i := precision downto 0 do
+    for i := precision to 0 by -1 do
         b := p[i] * 4 + carry
         p[i] := b mod SIZE
         carry := b div SIZE
     end
 
     // Borrow and carry.
-    for i := precision downto 1 do
+    for i := precision to 1 by -1 do
         if p[i] < 0 then
             b := p[i] div SIZE
             p[i] := p[i] - (b - 1) * SIZE
