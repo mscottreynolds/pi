@@ -185,6 +185,8 @@ function computePi(maxDigits: number): string
   return text.substring(0, maxDigits+2);
 }
 
+declare var process;
+
 let numberDigits = 10000;
 let formatOutput = false;
 let argv = process.argv.slice(2);
