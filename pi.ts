@@ -33,7 +33,7 @@
 */
 
 function trunc(n: number): number {
-  return n >> 0;
+  return n | 0;
 }
 
 /* Compute pi and return result as a string. */
@@ -49,10 +49,11 @@ function computePi(maxDigits: number): string
   let t = new Array<number>(precision+1);
   let text: string;
 
-  // Initialize t.
+  // Initialize.
   for (i = 0; i <= precision; i++)
   {
     t[i] = 0;
+    p[i] = 0;
   }
 
   // Note, borrows and carries from the addition and subtraction
