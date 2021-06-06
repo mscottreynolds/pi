@@ -184,7 +184,7 @@ function computePi(maxDigits)
 end
 
 let
-    totalDigits = 20000
+    totalDigits = 10000
     s = computePi(totalDigits)
     #println(s)
 
