@@ -31,7 +31,7 @@
 public class pi
 {
   // Change TOTAL_DIGITS to compute more digits of pi.
-  private static int TOTAL_DIGITS = 20000;
+  private static int TOTAL_DIGITS = 10000;
   private static int PRECISION = TOTAL_DIGITS / 3 + 2;
   private static int SIZE = 1000;
 
